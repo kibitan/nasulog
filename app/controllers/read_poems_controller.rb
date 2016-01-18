@@ -4,6 +4,7 @@ class ReadPoemsController < ApplicationController
 
   def create
     current_user.read_poems.create(poem_id: params[:poem_id])
+
     if json_request?
       render json: { status: :success }, status: :created
     else
