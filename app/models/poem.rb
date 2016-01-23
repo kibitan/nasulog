@@ -16,7 +16,6 @@ class Poem < ActiveRecord::Base
 
   delegate :icon_url, to: :user
   delegate :name, to: :user, prefix: :author
-  delegate :email, to: :user, prefix: :author
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, presence: true
